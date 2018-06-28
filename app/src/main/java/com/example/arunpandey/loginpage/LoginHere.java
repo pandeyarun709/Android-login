@@ -15,6 +15,8 @@ public class LoginHere extends AppCompatActivity {
     String id,password;
 
     String mailId,passwrd;
+    EditText pass;
+    EditText mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,22 +28,27 @@ public class LoginHere extends AppCompatActivity {
          passwrd = getIntent().getExtras().getString("Pass"); //getting password from registration page
 
  /* ########################################################################################## */
-        EditText mail = findViewById(R.id.editText5);
+         mail = findViewById(R.id.editText5);
 
-        EditText pass = findViewById(R.id.editText2);
+         pass = findViewById(R.id.editText2);
 
         Button login = findViewById(R.id.button2);
 
-        id = String.valueOf(mail.getText()); // gmail id at login page
+        id = mail.getText().toString(); // gmail id at login page
 
-        password = String.valueOf(pass.getText()); // pass enter at login page
+        password = pass.getText().toString(); // pass enter at login page
 
        // login.setOnClickListener(this);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               if(id.compareTo(mailId) == 0 && password.compareTo(passwrd) == 0)
+                id = mail.getText().toString(); // gmail id at login page
+
+                password = pass.getText().toString(); // pass enter at login page
+
+
+                if(id.compareTo(mailId) == 0 && password.compareTo(passwrd) == 0)
                {
                    Toast t1 = makeText(getApplicationContext(),"Login Successfully !!",Toast.LENGTH_LONG);
                    t1.show();
