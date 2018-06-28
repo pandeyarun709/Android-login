@@ -14,14 +14,16 @@ public class LoginHere extends AppCompatActivity {
 
     String id,password;
 
+    String mailId,passwrd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_here);
 
-        final String mailId = getIntent().getStringExtra("Mail"); //getting mail id from registration page
+          mailId = getIntent().getExtras().getString("Mail"); //getting mail id from registration page
 
-       final String passwrd = getIntent().getStringExtra("Pass"); //getting password from registration page
+         passwrd = getIntent().getExtras().getString("Pass"); //getting password from registration page
 
  /* ########################################################################################## */
         EditText mail = findViewById(R.id.editText5);
@@ -45,9 +47,7 @@ public class LoginHere extends AppCompatActivity {
                    t1.show();
                    t1.setGravity(Gravity.CENTER , 0 , 0 );
                }
-               else {
-
-                  Toast t2 =  makeText( getApplicationContext(), "Wrong password or mail !!" , Toast.LENGTH_LONG);
+               else {Toast t2 =  makeText( getApplicationContext(), "Wrong password or mail !!" , Toast.LENGTH_LONG);
                   t2.show();
                   t2.setGravity(Gravity.CENTER , 0 , 0 );
                }

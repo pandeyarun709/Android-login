@@ -11,25 +11,30 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     String id,password;
+    EditText mail;
+    EditText pass;
+    Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText mail = findViewById(R.id.editText3);
+         mail = findViewById(R.id.editText3);
 
-        EditText pass = findViewById(R.id.editText4);
+         pass = findViewById(R.id.editText4);
 
-        Button register = findViewById(R.id.button);
+         register = findViewById(R.id.button);
 
-        id = String.valueOf(mail.getText()); // gmail id store here
 
-        password = String.valueOf(pass.getText()); //password store here
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                id = mail.getText().toString(); // gmail id store here
+
+                password = pass.getText().toString(); //password store here
 
                 Intent intent = new Intent(MainActivity.this, LoginHere.class);
 
